@@ -614,6 +614,7 @@ if __name__=="__main__":
 				time_limit = miner.return_miner_acception_wait_time()
 				size_limit = miner.return_miner_accepted_transactions_size_limit()
 				for (arrival_time, unconfirmmed_transaction) in final_transactions_arrival_queue:
+					new_begining_mining_time = arrival_time
 					if miner.online_switcher():
 						if time_limit:
 							if arrival_time > time_limit:
@@ -669,7 +670,6 @@ if __name__=="__main__":
 							new_begining_mining_time = arrival_time + verification_time + signing_time
 					else:
 						print(f"A verification process is skipped for the transaction from validator {unconfirmmed_transaction['validation_done_by']} by miner {miner.return_idx()} due to miner offline.")
-						new_begining_mining_time = arrival_time
 					begin_mining_time = new_begining_mining_time if new_begining_mining_time > begin_mining_time else begin_mining_time
 				transactions_to_record_in_block = {}
 				transactions_to_record_in_block['valid_validator_sig_transacitons'] = valid_validator_sig_candidate_transacitons
