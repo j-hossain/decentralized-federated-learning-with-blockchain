@@ -102,3 +102,5 @@ Please raise other issues and concerns you found. Thank you!
 (1)The code of the blockchain architecture and PoW consensus is inspired by Satwik's [*python_blockchain_app*](https://github.com/satwikkansal/python_blockchain_app). 
 
 (2)The code of FedAvg used in VBFL is inspired by [*WHDY's FedAvg implementation*](https://github.com/WHDY/FedAvg).
+
+(3)The code is combined with Blockchain.
